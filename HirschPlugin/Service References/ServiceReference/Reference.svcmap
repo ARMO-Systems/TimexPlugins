@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2ff409c9-2781-433f-bf1d-247e5d024c37" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:59361/Timex/TimexSDKService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="48090bd5-0a37-431b-b123-de22278c6700" SourceId="1" SourceUrl="http://localhost:59361/Timex/TimexSDKService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="9a1b8040-dd7c-4ee3-bb1d-6ec488adb8b4" SourceId="1" SourceUrl="http://localhost:59361/Timex/TimexSDKService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="5048af3b-95d0-455c-a68e-a5e8c63c5c54" SourceId="1" SourceUrl="http://localhost:59361/Timex/TimexSDKService/mex" />
+    <MetadataFile FileName="ArmoSystems.Timex.SDKService.SDKClasses.xsd" MetadataType="Schema" ID="9cc89a69-f4a3-4889-933d-670258effe8f" SourceId="1" SourceUrl="http://localhost:59361/Timex/TimexSDKService/mex" />
+    <MetadataFile FileName="ArmoSystems.Timex.Shared.XPO.Source.xsd" MetadataType="Schema" ID="c8969202-2dcd-40b6-be97-480581883558" SourceId="1" SourceUrl="http://localhost:59361/Timex/TimexSDKService/mex" />
+    <MetadataFile FileName="ArmoSystems.Timex.Shared.XPO.xsd" MetadataType="Schema" ID="e540d9f3-4530-481c-ab85-fb4fca0bbd3a" SourceId="1" SourceUrl="http://localhost:59361/Timex/TimexSDKService/mex" />
+    <MetadataFile FileName="ArmoSystems.Timex.Shared.DBObserver.xsd" MetadataType="Schema" ID="634d0adf-eb3c-4988-98ec-777973cad076" SourceId="1" SourceUrl="http://localhost:59361/Timex/TimexSDKService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="8aae7792-cec3-4fb9-91a0-4d49dd48f20c" SourceId="1" SourceUrl="http://localhost:59361/Timex/TimexSDKService/mex" />
+    <MetadataFile FileName="ArmoSystems.Timex.Shared.CommonClasses.xsd" MetadataType="Schema" ID="9baefd16-452d-42dc-83f9-968dc60b0ca5" SourceId="1" SourceUrl="http://localhost:59361/Timex/TimexSDKService/mex" />
+    <MetadataFile FileName="ArmoSystems.Timex.Shared.XPO.Source.VhodiVihodi.xsd" MetadataType="Schema" ID="614e9bb6-7c64-4319-acfd-b219cd5e433d" SourceId="1" SourceUrl="http://localhost:59361/Timex/TimexSDKService/mex" />
+    <MetadataFile FileName="ArmoSystems.Timex.Shared.XPO.Events.WorktimeEvents.xsd" MetadataType="Schema" ID="fd495722-508b-4df1-8a24-cad8d795a307" SourceId="1" SourceUrl="http://localhost:59361/Timex/TimexSDKService/mex" />
+    <MetadataFile FileName="ArmoSystems.Timex.Shared.XPO.Source.LogicalRelations.xsd" MetadataType="Schema" ID="2ad5cf57-4413-4dc7-a199-072b0656c54f" SourceId="1" SourceUrl="http://localhost:59361/Timex/TimexSDKService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

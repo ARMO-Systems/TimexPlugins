@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Source.LogicalRelations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Source.LogicalRelations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ElementType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AllAccessPoints" />
+      <xs:enumeration value="AllEntrances" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ElementType" nillable="true" type="tns:ElementType" />
+  <xs:simpleType name="LogicalLinkXPO.ActionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Off" />
+      <xs:enumeration value="On" />
+      <xs:enumeration value="Pulse" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LogicalLinkXPO.ActionType" nillable="true" type="tns:LogicalLinkXPO.ActionType" />
+</xs:schema>

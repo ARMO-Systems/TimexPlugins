@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="DirectionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Enter" />
+      <xs:enumeration value="Exit" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DirectionType" nillable="true" type="tns:DirectionType" />
+  <xs:simpleType name="Transfer">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="NextDay" />
+      <xs:enumeration value="ThisDay" />
+      <xs:enumeration value="BiggestPart" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Transfer" nillable="true" type="tns:Transfer" />
+  <xs:simpleType name="Mode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FirstLastEvents" />
+      <xs:enumeration value="Soft" />
+      <xs:enumeration value="Hard" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Mode" nillable="true" type="tns:Mode" />
+  <xs:simpleType name="RoundTo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotRound" />
+      <xs:enumeration value="To5Minutes">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="To10Minutes">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="To30Minutes">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="To1Hour">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">60</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RoundTo" nillable="true" type="tns:RoundTo" />
+  <xs:simpleType name="IdentificationMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="FingerprintOrCodeOrCard" />
+      <xs:enumeration value="Fingerprint" />
+      <xs:enumeration value="Pin" />
+      <xs:enumeration value="Code" />
+      <xs:enumeration value="Card" />
+      <xs:enumeration value="FingerprintAndCard" />
+      <xs:enumeration value="FingerprintOrCode" />
+      <xs:enumeration value="FingerprintOrCard" />
+      <xs:enumeration value="CodeOrCard" />
+      <xs:enumeration value="PinAndFingerprint" />
+      <xs:enumeration value="FingerprintAndCode" />
+      <xs:enumeration value="CodeAndCard" />
+      <xs:enumeration value="FingerprintAndCodeAndCard" />
+      <xs:enumeration value="PinAndFingerprintAndCode" />
+      <xs:enumeration value="FingerprintAndCardOrPin" />
+      <xs:enumeration value="Face" />
+      <xs:enumeration value="FaceAndCode" />
+      <xs:enumeration value="FaceAndCard" />
+      <xs:enumeration value="FaceAndCodeAndCard" />
+      <xs:enumeration value="FaceOrCodeOrCard" />
+      <xs:enumeration value="Vein" />
+      <xs:enumeration value="VeinAndCard" />
+      <xs:enumeration value="VeinAndCode" />
+      <xs:enumeration value="VeinAndCardAndCode" />
+      <xs:enumeration value="VeinOrCodeOrCard" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IdentificationMode" nillable="true" type="tns:IdentificationMode" />
+  <xs:simpleType name="CountAs">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Working">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Absence">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="DayOff">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Enter">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Exit">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ControlPoint">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="CountAs" nillable="true" type="tns:CountAs" />
+  <xs:simpleType name="Gender">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Male" />
+      <xs:enumeration value="Female" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Gender" nillable="true" type="tns:Gender" />
+</xs:schema>

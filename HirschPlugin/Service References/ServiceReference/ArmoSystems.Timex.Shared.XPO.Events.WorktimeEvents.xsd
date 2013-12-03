@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Events.WorktimeEvents" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Events.WorktimeEvents" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="WorktimeEventType">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Enter" />
+          <xs:enumeration value="Exit" />
+          <xs:enumeration value="ControlPoint" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="WorktimeEventType" nillable="true" type="tns:WorktimeEventType" />
+</xs:schema>

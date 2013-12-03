@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Source" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.CommonClasses" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Source.VhodiVihodi" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Events.WorktimeEvents" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Source.LogicalRelations" />
+  <xs:complexType name="ArrayOfWorkingArea">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkingArea" nillable="true" type="tns:WorkingArea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkingArea" nillable="true" type="tns:ArrayOfWorkingArea" />
+  <xs:complexType name="WorkingArea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DirectedAreas" nillable="true" type="tns:ArrayOfDirectedArea" />
+      <xs:element minOccurs="0" name="IntegrationID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkingArea" nillable="true" type="tns:WorkingArea" />
+  <xs:complexType name="ArrayOfDirectedArea">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DirectedArea" nillable="true" type="tns:DirectedArea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDirectedArea" nillable="true" type="tns:ArrayOfDirectedArea" />
+  <xs:complexType name="DirectedArea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Area" nillable="true" type="tns:Area" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO" minOccurs="0" name="DirectionType" type="q1:DirectionType" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DirectedArea" nillable="true" type="tns:DirectedArea" />
+  <xs:complexType name="Area">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationPoints" nillable="true" type="tns:ArrayOfRegistrationPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Area" nillable="true" type="tns:Area" />
+  <xs:complexType name="ArrayOfRegistrationPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RegistrationPoint" nillable="true" type="tns:RegistrationPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRegistrationPoint" nillable="true" type="tns:ArrayOfRegistrationPoint" />
+  <xs:complexType name="RegistrationPoint">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Source">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IntegrationID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RegistrationPoint" nillable="true" type="tns:RegistrationPoint" />
+  <xs:complexType name="Source">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceType" nillable="true" type="tns:SourceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Source" nillable="true" type="tns:Source" />
+  <xs:complexType name="SourceType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Source" minOccurs="0" name="SType" type="q2:SourceT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SourceType" nillable="true" type="tns:SourceType" />
+  <xs:complexType name="ArrayOfRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Rule" nillable="true" type="tns:Rule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRule" nillable="true" type="tns:ArrayOfRule" />
+  <xs:complexType name="Rule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO" minOccurs="0" name="IntervalTransferForFreeSmena" type="q3:Transfer" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO" minOccurs="0" name="Mode" type="q4:Mode" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PermittedAttendance" type="xs:double" />
+      <xs:element minOccurs="0" name="PermittedEarlyArrival" type="xs:double" />
+      <xs:element minOccurs="0" name="PermittedEarlyDeparture" type="xs:double" />
+      <xs:element minOccurs="0" name="PermittedLateArrival" type="xs:double" />
+      <xs:element minOccurs="0" name="PermittedLateDeparture" type="xs:double" />
+      <xs:element minOccurs="0" name="RoundStartMin" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO" minOccurs="0" name="RoundTo" type="q5:RoundTo" />
+      <xs:element minOccurs="0" name="SearchEventsIntervalAfterShift" type="xs:double" />
+      <xs:element minOccurs="0" name="SearchEventsIntervalBeforeShift" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Rule" nillable="true" type="tns:Rule" />
+  <xs:complexType name="ArrayOfDayShift">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DayShift" nillable="true" type="tns:DayShift" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDayShift" nillable="true" type="tns:ArrayOfDayShift" />
+  <xs:complexType name="DayShift">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DayNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Shift" nillable="true" type="tns:Shift" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DayShift" nillable="true" type="tns:DayShift" />
+  <xs:complexType name="Shift">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AutomaticCorrection" type="xs:double" />
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Intervals" nillable="true" type="tns:ArrayOfShiftInterval" />
+      <xs:element minOccurs="0" name="IsDayOff" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.CommonClasses" minOccurs="0" name="Period" type="q6:Period" />
+      <xs:element minOccurs="0" name="Rate" type="xs:double" />
+      <xs:element minOccurs="0" name="RateForPeriod" type="xs:double" />
+      <xs:element minOccurs="0" name="ShiftEnd" type="xs:double" />
+      <xs:element minOccurs="0" name="ShiftStart" type="xs:double" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.CommonClasses" minOccurs="0" name="ShiftType" type="q7:ShiftType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Shift" nillable="true" type="tns:Shift" />
+  <xs:complexType name="ArrayOfShiftInterval">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShiftInterval" nillable="true" type="tns:ShiftInterval" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfShiftInterval" nillable="true" type="tns:ArrayOfShiftInterval" />
+  <xs:complexType name="ShiftInterval">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Begin" type="xs:double" />
+      <xs:element minOccurs="0" name="Break" type="xs:double" />
+      <xs:element minOccurs="0" name="End" type="xs:double" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rate" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShiftInterval" nillable="true" type="tns:ShiftInterval" />
+  <xs:complexType name="ArrayOfShift">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Shift" nillable="true" type="tns:Shift" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfShift" nillable="true" type="tns:ArrayOfShift" />
+  <xs:complexType name="ArrayOfEnter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Enter" nillable="true" type="tns:Enter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEnter" nillable="true" type="tns:ArrayOfEnter" />
+  <xs:complexType name="Enter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Source">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Device" nillable="true" type="tns:Device" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Source.VhodiVihodi" minOccurs="0" name="EnterType" nillable="true" type="q8:EnterType" />
+          <xs:element minOccurs="0" name="Index" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Enter" nillable="true" type="tns:Enter" />
+  <xs:complexType name="Device">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Source">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessPoints" nillable="true" type="tns:ArrayOfAccessPoint" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.CommonClasses" minOccurs="0" name="ActiveConnectionType" type="q9:DeviceConnectionType" />
+          <xs:element minOccurs="0" name="ComPort" type="xs:int" />
+          <xs:element minOccurs="0" name="DevID" type="xs:int" />
+          <xs:element minOccurs="0" name="Firmware" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Port" type="xs:int" />
+          <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TimeZone" nillable="true" type="tns:TimeZone" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Device" nillable="true" type="tns:Device" />
+  <xs:complexType name="ArrayOfAccessPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccessPoint" nillable="true" type="tns:AccessPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccessPoint" nillable="true" type="tns:ArrayOfAccessPoint" />
+  <xs:complexType name="AccessPoint">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Source">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalReader" nillable="true" type="tns:AdditionalReader" />
+          <xs:element minOccurs="0" name="AddressDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Door" type="xs:int" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO" minOccurs="0" name="Identification" type="q10:IdentificationMode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AccessPoint" nillable="true" type="tns:AccessPoint" />
+  <xs:complexType name="AdditionalReader">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Source">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Slave" nillable="true" type="tns:Device" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AdditionalReader" nillable="true" type="tns:AdditionalReader" />
+  <xs:complexType name="TimeZone">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TimeZone" nillable="true" type="tns:TimeZone" />
+  <xs:complexType name="ArrayOfExit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Exit" nillable="true" type="tns:Exit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExit" nillable="true" type="tns:ArrayOfExit" />
+  <xs:complexType name="Exit">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Source">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Device" nillable="true" type="tns:Device" />
+          <xs:element minOccurs="0" name="Index" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Exit" nillable="true" type="tns:Exit" />
+  <xs:complexType name="ArrayOfTimexOperator">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TimexOperator" nillable="true" type="tns:TimexOperator" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTimexOperator" nillable="true" type="tns:ArrayOfTimexOperator" />
+  <xs:complexType name="TimexOperator">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MidName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TimexOperator" nillable="true" type="tns:TimexOperator" />
+  <xs:complexType name="ArrayOfTimeZone">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeZone" nillable="true" type="tns:TimeZone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTimeZone" nillable="true" type="tns:ArrayOfTimeZone" />
+  <xs:complexType name="ArrayOfAccessLevel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccessLevel" nillable="true" type="tns:AccessLevel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccessLevel" nillable="true" type="tns:ArrayOfAccessLevel" />
+  <xs:complexType name="AccessLevel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccessLevel" nillable="true" type="tns:AccessLevel" />
+  <xs:complexType name="ArrayOfArea">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Area" nillable="true" type="tns:Area" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArea" nillable="true" type="tns:ArrayOfArea" />
+  <xs:complexType name="ArrayOfWorktimeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorktimeInfo" nillable="true" type="tns:WorktimeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorktimeInfo" nillable="true" type="tns:ArrayOfWorktimeInfo" />
+  <xs:complexType name="WorktimeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Absence" nillable="true" type="tns:Adjustment" />
+      <xs:element minOccurs="0" name="AbsentTime" type="xs:double" />
+      <xs:element minOccurs="0" name="Arrival" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CurrentShift" nillable="true" type="tns:Shift" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Departure" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="EarlyDeparture" type="xs:double" />
+      <xs:element minOccurs="0" name="Employee" nillable="true" type="tns:Employee" />
+      <xs:element minOccurs="0" name="IsDayBeforeHoliday" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDayOff" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsHoliday" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTransfer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LetterCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NightOvertime" type="xs:double" />
+      <xs:element minOccurs="0" name="NightWorkedTime" type="xs:double" />
+      <xs:element minOccurs="0" name="NotWorkedTime" type="xs:double" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Overtime" type="xs:double" />
+      <xs:element minOccurs="0" name="Rate" type="xs:double" />
+      <xs:element minOccurs="0" name="Schedule" nillable="true" type="tns:Schedule" />
+      <xs:element minOccurs="0" name="TimeLate" type="xs:double" />
+      <xs:element minOccurs="0" name="UseAdjustments" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WorkedTime" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorktimeInfo" nillable="true" type="tns:WorktimeInfo" />
+  <xs:complexType name="Adjustment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdjustmentType" nillable="true" type="tns:AdjustmentType" />
+      <xs:element minOccurs="0" name="Begin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Employee" nillable="true" type="tns:Employee" />
+      <xs:element minOccurs="0" name="End" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeZone" nillable="true" type="tns:TimeZone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Adjustment" nillable="true" type="tns:Adjustment" />
+  <xs:complexType name="AdjustmentType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO" minOccurs="0" name="CountAs" type="q11:CountAs" />
+      <xs:element minOccurs="0" name="LetterCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdjustmentType" nillable="true" type="tns:AdjustmentType" />
+  <xs:complexType name="Employee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessArea" nillable="true" type="tns:WorkingArea" />
+      <xs:element minOccurs="0" name="AccessLevel" nillable="true" type="tns:AccessLevel" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Birthday" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BirthdayPlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardNumber" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="CardValidEndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CardValidStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Company" nillable="true" type="tns:Company" />
+      <xs:element minOccurs="0" name="CustomField1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomField2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomField3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomField4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomField5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomField6" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Department" nillable="true" type="tns:Department" />
+      <xs:element minOccurs="0" name="DismissalDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmploymentDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO" minOccurs="0" name="Gender" type="q12:Gender" />
+      <xs:element minOccurs="0" name="IntegrationID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MidName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pin" type="xs:int" />
+      <xs:element minOccurs="0" name="Post" nillable="true" type="tns:Post" />
+      <xs:element minOccurs="0" name="SchedulesWithStartDate" nillable="true" type="tns:ArrayOfScheduleWithStartDate" />
+      <xs:element minOccurs="0" name="TableNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkPhone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Employee" nillable="true" type="tns:Employee" />
+  <xs:complexType name="Company">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Department">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Company" nillable="true" type="tns:Company" />
+  <xs:complexType name="Department">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Company" nillable="true" type="tns:Company" />
+      <xs:element minOccurs="0" name="IntegrationID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parent" nillable="true" type="tns:Department" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Department" nillable="true" type="tns:Department" />
+  <xs:complexType name="Post">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IntegrationID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Post" nillable="true" type="tns:Post" />
+  <xs:complexType name="ArrayOfScheduleWithStartDate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduleWithStartDate" nillable="true" type="tns:ScheduleWithStartDate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfScheduleWithStartDate" nillable="true" type="tns:ArrayOfScheduleWithStartDate" />
+  <xs:complexType name="ScheduleWithStartDate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeginningDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Schedule" nillable="true" type="tns:Schedule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScheduleWithStartDate" nillable="true" type="tns:ScheduleWithStartDate" />
+  <xs:complexType name="Schedule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstShiftDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Shifts" nillable="true" type="tns:ArrayOfDayShift" />
+      <xs:element minOccurs="0" name="UseProductionCalendar" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Schedule" nillable="true" type="tns:Schedule" />
+  <xs:complexType name="ArrayOfWorktimeEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorktimeEvent" nillable="true" type="tns:WorktimeEvent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorktimeEvent" nillable="true" type="tns:ArrayOfWorktimeEvent" />
+  <xs:complexType name="WorktimeEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Event">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Employee" nillable="true" type="tns:Employee" />
+          <xs:element minOccurs="0" name="IntegrationID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegistrationPoint" nillable="true" type="tns:RegistrationPoint" />
+          <xs:element minOccurs="0" name="TimeUTC" type="xs:dateTime" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Events.WorktimeEvents" minOccurs="0" name="WorktimeEventType" type="q13:WorktimeEventType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorktimeEvent" nillable="true" type="tns:WorktimeEvent" />
+  <xs:complexType name="Event">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeZone" nillable="true" type="tns:TimeZone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Event" nillable="true" type="tns:Event" />
+  <xs:complexType name="ArrayOfAdjustment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Adjustment" nillable="true" type="tns:Adjustment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdjustment" nillable="true" type="tns:ArrayOfAdjustment" />
+  <xs:complexType name="ArrayOfDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Department" nillable="true" type="tns:Department" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepartment" nillable="true" type="tns:ArrayOfDepartment" />
+  <xs:complexType name="ArrayOfCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Company" nillable="true" type="tns:Company" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompany" nillable="true" type="tns:ArrayOfCompany" />
+  <xs:complexType name="ArrayOfAdditionalReader">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalReader" nillable="true" type="tns:AdditionalReader" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalReader" nillable="true" type="tns:ArrayOfAdditionalReader" />
+  <xs:complexType name="ArrayOfWorkstation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Workstation" nillable="true" type="tns:Workstation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkstation" nillable="true" type="tns:ArrayOfWorkstation" />
+  <xs:complexType name="Workstation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Source">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ComputerName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Workstation" nillable="true" type="tns:Workstation" />
+  <xs:complexType name="ArrayOfDevice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Device" nillable="true" type="tns:Device" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDevice" nillable="true" type="tns:ArrayOfDevice" />
+  <xs:complexType name="ArrayOfLogicalElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LogicalElement" nillable="true" type="tns:LogicalElement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLogicalElement" nillable="true" type="tns:ArrayOfLogicalElement" />
+  <xs:complexType name="LogicalElement">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Source">
+        <xs:sequence>
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Source.LogicalRelations" minOccurs="0" name="ElementType" type="q14:ElementType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LogicalElement" nillable="true" type="tns:LogicalElement" />
+  <xs:complexType name="ArrayOfLogicalLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LogicalLink" nillable="true" type="tns:LogicalLink" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLogicalLink" nillable="true" type="tns:ArrayOfLogicalLink" />
+  <xs:complexType name="LogicalLink">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Source">
+        <xs:sequence>
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Source.LogicalRelations" minOccurs="0" name="Action" type="q15:LogicalLinkXPO.ActionType" />
+          <xs:element minOccurs="0" name="Device" nillable="true" type="tns:Device" />
+          <xs:element minOccurs="0" name="InEventType" nillable="true" type="tns:EventType" />
+          <xs:element minOccurs="0" name="Input" nillable="true" type="tns:Source" />
+          <xs:element minOccurs="0" name="OutTime" type="xs:int" />
+          <xs:element minOccurs="0" name="Output" nillable="true" type="tns:Source" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LogicalLink" nillable="true" type="tns:LogicalLink" />
+  <xs:complexType name="EventType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventType" nillable="true" type="tns:EventType" />
+  <xs:complexType name="ArrayOfEmployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="tns:Employee" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployee" nillable="true" type="tns:ArrayOfEmployee" />
+  <xs:complexType name="ArrayOfEmployeeDetailInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeeDetailInfo" nillable="true" type="tns:EmployeeDetailInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployeeDetailInfo" nillable="true" type="tns:ArrayOfEmployeeDetailInfo" />
+  <xs:complexType name="EmployeeDetailInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomPicture1" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Photo" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmployeeDetailInfo" nillable="true" type="tns:EmployeeDetailInfo" />
+  <xs:complexType name="ArrayOfSchedule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Schedule" nillable="true" type="tns:Schedule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSchedule" nillable="true" type="tns:ArrayOfSchedule" />
+  <xs:complexType name="ArrayOfPost">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Post" nillable="true" type="tns:Post" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPost" nillable="true" type="tns:ArrayOfPost" />
+</xs:schema>

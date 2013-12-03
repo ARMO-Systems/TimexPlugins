@@ -1,0 +1,2985 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ISDKServiceImpl" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Source" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.CommonClasses" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Source.VhodiVihodi" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Events.WorktimeEvents" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.XPO.Source.LogicalRelations" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISDKService_GetPackWorkingAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackWorkingAreas" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackWorkingAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackWorkingAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackWorkingAreas_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q1:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateWorkingAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWorkingAreas" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateWorkingAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWorkingAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateWorkingAreas_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q2:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRules" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateRules_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q3:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveRules" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveRules_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q4:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRules" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetRules_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q5:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackRules" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackRules_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q6:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRules" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateRules_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q7:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateDayShifts_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDayShifts" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateDayShifts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDayShiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateDayShifts_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q8:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveDayShifts_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDayShifts" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveDayShifts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDayShiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveDayShifts_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q9:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetDayShifts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDayShifts" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetDayShifts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDayShiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetDayShifts_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q10:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackDayShifts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackDayShifts" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackDayShifts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackDayShiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackDayShifts_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q11:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateDayShifts_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDayShifts" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateDayShifts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDayShiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateDayShifts_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q12:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateShifts_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateShifts" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateShifts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateShiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateShifts_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q13:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveShifts_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveShifts" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveShifts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveShiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveShifts_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q14:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetShifts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShifts" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetShifts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetShifts_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q15:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackShifts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackShifts" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackShifts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackShiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackShifts_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q16:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateShifts_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShifts" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateShifts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateShifts_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q17:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetEnters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnters" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetEnters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetEnters_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q18:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackEnters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackEnters" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackEnters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackEntersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackEnters_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q19:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetExits_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExits" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetExits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetExits_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q20:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackExits_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackExits" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackExits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackExitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackExits_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q21:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetTimexOperators_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimexOperators" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetTimexOperators_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimexOperatorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetTimexOperators_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q22:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackTimexOperators_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackTimexOperators" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackTimexOperators_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackTimexOperatorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackTimexOperators_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q23:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetTimeZones_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeZones" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetTimeZones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeZonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetTimeZones_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q24:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackTimeZones_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackTimeZones" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackTimeZones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackTimeZonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackTimeZones_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q25:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateAccessLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAccessLevels" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateAccessLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAccessLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateAccessLevels_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q26:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveAccessLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAccessLevels" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveAccessLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAccessLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveAccessLevels_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q27:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAccessLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessLevels" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAccessLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAccessLevels_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q28:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackAccessLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackAccessLevels" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackAccessLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackAccessLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackAccessLevels_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q29:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateAccessLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccessLevels" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateAccessLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccessLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateAccessLevels_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q30:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAreas" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateAreas_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q31:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAreas" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveAreas_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q32:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreas" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAreas_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q33:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackAreas" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackAreas_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q34:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAreas" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateAreas_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q35:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetWorkTimeInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkTimeInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetWorkTimeInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkTimeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetWorkTimeInfo_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q36:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetWorktimeEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorktimeEvents" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetWorktimeEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorktimeEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetWorktimeEvents_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q37:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateWorktimeEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWorktimeEvent" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateWorktimeEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWorktimeEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateWorktimeEvent_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q38:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveWorktimeEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveWorktimeEvent" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveWorktimeEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveWorktimeEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveWorktimeEvent_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q39:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAdjustmentsByInterval_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdjustmentsByInterval" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAdjustmentsByInterval_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdjustmentsByIntervalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAdjustmentsByInterval_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q40:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetShiftByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShiftByDate" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetShiftByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShiftByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetShiftByDate_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q41:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetEventTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventTypes" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetEventTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetEventTypes_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q42:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_AccessPointsOpen_InputMessage">
+    <wsdl:part name="parameters" element="tns:AccessPointsOpen" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_AccessPointsOpen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AccessPointsOpenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_AccessPointsOpen_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q43:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_AccessPointsClose_InputMessage">
+    <wsdl:part name="parameters" element="tns:AccessPointsClose" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_AccessPointsClose_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AccessPointsCloseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_AccessPointsClose_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q44:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_AccessPointsUnblock_InputMessage">
+    <wsdl:part name="parameters" element="tns:AccessPointsUnblock" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_AccessPointsUnblock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AccessPointsUnblockResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_AccessPointsUnblock_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q45:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_SubscribeOnEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeOnEvents" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_SubscribeOnEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeOnEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_SubscribeOnEvents_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q46:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UnsubscribeFromEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeFromEvents" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UnsubscribeFromEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeFromEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UnsubscribeFromEvents_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q47:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_LogonUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogonUser" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_LogonUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogonUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_LogonUser_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q48:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_LogoutUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutUser" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_LogoutUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_HeartBeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:HeartBeat" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_HeartBeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HeartBeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_HeartBeat_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q49:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAdjustments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdjustments" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAdjustments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdjustmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAdjustments_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q50:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackAdjustments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackAdjustments" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackAdjustments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackAdjustmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackAdjustments_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q51:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateDepartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDepartments" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateDepartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateDepartments_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q52:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveDepartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDepartments" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveDepartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveDepartments_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q53="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q53:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetDepartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartments" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetDepartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetDepartments_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q54:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackDepartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackDepartments" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackDepartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackDepartments_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q55="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q55:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateDepartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDepartments" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateDepartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateDepartments_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q56:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateCompanies_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCompanies" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateCompanies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCompaniesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateCompanies_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q57="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q57:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveCompanies_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCompanies" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveCompanies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCompaniesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveCompanies_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q58="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q58:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetCompanies_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanies" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetCompanies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompaniesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetCompanies_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q59="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q59:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackCompanies_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackCompanies" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackCompanies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackCompaniesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackCompanies_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q60="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q60:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateCompanies_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompanies" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateCompanies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompaniesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateCompanies_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q61="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q61:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAdditionalReaders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdditionalReaders" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAdditionalReaders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdditionalReadersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAdditionalReaders_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q62="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q62:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackAdditionalReaders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackAdditionalReaders" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackAdditionalReaders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackAdditionalReadersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackAdditionalReaders_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q63="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q63:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateSchedulesWithStartDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSchedulesWithStartDate" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateSchedulesWithStartDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSchedulesWithStartDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateSchedulesWithStartDate_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q64="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q64:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveSchedulesWithStartDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSchedulesWithStartDate" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveSchedulesWithStartDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSchedulesWithStartDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveSchedulesWithStartDate_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q65="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q65:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetSchedulesWithStartDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchedulesWithStartDate" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetSchedulesWithStartDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchedulesWithStartDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetSchedulesWithStartDate_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q66="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q66:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackSchedulesWithStartDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackSchedulesWithStartDate" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackSchedulesWithStartDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackSchedulesWithStartDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackSchedulesWithStartDate_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q67="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q67:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateSchedulesWithStartDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSchedulesWithStartDate" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateSchedulesWithStartDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSchedulesWithStartDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateSchedulesWithStartDate_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q68="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q68:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateDirectedAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDirectedAreas" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateDirectedAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDirectedAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateDirectedAreas_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q69="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q69:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveDirectedAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDirectedAreas" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveDirectedAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDirectedAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveDirectedAreas_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q70="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q70:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetDirectedAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirectedAreas" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetDirectedAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirectedAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetDirectedAreas_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q71="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q71:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackDirectedAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackDirectedAreas" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackDirectedAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackDirectedAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackDirectedAreas_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q72="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q72:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateDirectedAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDirectedAreas" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateDirectedAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDirectedAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateDirectedAreas_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q73="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q73:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetWorkstations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkstations" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetWorkstations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkstationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetWorkstations_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q74="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q74:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackWorkstations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackWorkstations" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackWorkstations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackWorkstationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackWorkstations_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q75="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q75:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetDevices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDevices" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetDevices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDevicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetDevices_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q76="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q76:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackDevices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackDevices" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackDevices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackDevicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackDevices_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q77="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q77:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetLogicalElements_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogicalElements" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetLogicalElements_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogicalElementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetLogicalElements_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q78="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q78:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackLogicalElements_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackLogicalElements" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackLogicalElements_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackLogicalElementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackLogicalElements_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q79="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q79:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetLogicalLinks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogicalLinks" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetLogicalLinks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogicalLinksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetLogicalLinks_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q80="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q80:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackLogicalLinks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackLogicalLinks" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackLogicalLinks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackLogicalLinksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackLogicalLinks_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q81="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q81:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAccessPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessPoints" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAccessPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetAccessPoints_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q82="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q82:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackAccessPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackAccessPoints" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackAccessPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackAccessPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackAccessPoints_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q83="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q83:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateRegistrationPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRegistrationPoints" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateRegistrationPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRegistrationPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateRegistrationPoints_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q84="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q84:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveRegistrationPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveRegistrationPoints" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveRegistrationPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveRegistrationPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveRegistrationPoints_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q85="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q85:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetRegistrationPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegistrationPoints" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetRegistrationPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegistrationPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetRegistrationPoints_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q86="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q86:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackRegistrationPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackRegistrationPoints" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackRegistrationPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackRegistrationPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackRegistrationPoints_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q87="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q87:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateRegistrationPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRegistrationPoints" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateRegistrationPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRegistrationPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateRegistrationPoints_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q88="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q88:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateEmployees_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateEmployees" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateEmployees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateEmployees_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q89="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q89:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveEmployees_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveEmployees" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveEmployees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveEmployees_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q90="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q90:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetEmployees_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployees" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetEmployees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetEmployees_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q91="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q91:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackEmployees_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackEmployees" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackEmployees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackEmployees_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q92="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q92:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateEmployees_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployees" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateEmployees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateEmployees_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q93="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q93:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetDetailInfoEmployees_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailInfoEmployees" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetDetailInfoEmployees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailInfoEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetDetailInfoEmployees_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q94="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q94:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateDetailInfoEmployees_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDetailInfoEmployees" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateDetailInfoEmployees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDetailInfoEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateDetailInfoEmployees_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q95="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q95:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateSchedules_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSchedules" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateSchedules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSchedulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateSchedules_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q96="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q96:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveSchedules_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSchedules" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveSchedules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSchedulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveSchedules_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q97="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q97:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetSchedules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchedules" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetSchedules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchedulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetSchedules_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q98="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q98:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackSchedules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackSchedules" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackSchedules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackSchedulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackSchedules_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q99="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q99:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateSchedules_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSchedules" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateSchedules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSchedulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateSchedules_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q100="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q100:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateShiftIntervals_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateShiftIntervals" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateShiftIntervals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateShiftIntervalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateShiftIntervals_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q101="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q101:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveShiftIntervals_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveShiftIntervals" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveShiftIntervals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveShiftIntervalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveShiftIntervals_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q102="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q102:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetShiftIntervals_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShiftIntervals" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetShiftIntervals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShiftIntervalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetShiftIntervals_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q103="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q103:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackShiftIntervals_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackShiftIntervals" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackShiftIntervals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackShiftIntervalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackShiftIntervals_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q104="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q104:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateShiftIntervals_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShiftIntervals" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateShiftIntervals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShiftIntervalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdateShiftIntervals_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q105="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q105:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreatePosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePosts" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreatePosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreatePosts_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q106="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q106:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemovePosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemovePosts" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemovePosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemovePostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemovePosts_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q107="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q107:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPosts" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPosts_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q108="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q108:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackPosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackPosts" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackPosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPackPostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetPackPosts_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q109="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q109:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdatePosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePosts" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdatePosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_UpdatePosts_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q110="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q110:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateWorkingAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWorkingAreas" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateWorkingAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWorkingAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_CreateWorkingAreas_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q111="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q111:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveWorkingAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveWorkingAreas" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveWorkingAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveWorkingAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_RemoveWorkingAreas_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q112="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q112:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetWorkingAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkingAreas" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetWorkingAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkingAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDKService_GetWorkingAreas_ServiceFautFault_FaultMessage">
+    <wsdl:part xmlns:q113="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.DBObserver" name="detail" element="q113:ServiceFaut" />
+  </wsdl:message>
+  <wsdl:portType name="ISDKService">
+    <wsdl:operation name="GetPackWorkingAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackWorkingAreas" message="tns:ISDKService_GetPackWorkingAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackWorkingAreasResponse" message="tns:ISDKService_GetPackWorkingAreas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackWorkingAreasServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackWorkingAreas_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkingAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdateWorkingAreas" message="tns:ISDKService_UpdateWorkingAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdateWorkingAreasResponse" message="tns:ISDKService_UpdateWorkingAreas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdateWorkingAreasServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdateWorkingAreas_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRules">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreateRules" message="tns:ISDKService_CreateRules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreateRulesResponse" message="tns:ISDKService_CreateRules_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreateRulesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreateRules_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRules">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemoveRules" message="tns:ISDKService_RemoveRules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemoveRulesResponse" message="tns:ISDKService_RemoveRules_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemoveRulesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemoveRules_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRules">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetRules" message="tns:ISDKService_GetRules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetRulesResponse" message="tns:ISDKService_GetRules_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetRulesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetRules_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackRules">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackRules" message="tns:ISDKService_GetPackRules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackRulesResponse" message="tns:ISDKService_GetPackRules_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackRulesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackRules_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRules">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdateRules" message="tns:ISDKService_UpdateRules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdateRulesResponse" message="tns:ISDKService_UpdateRules_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdateRulesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdateRules_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDayShifts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreateDayShifts" message="tns:ISDKService_CreateDayShifts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreateDayShiftsResponse" message="tns:ISDKService_CreateDayShifts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreateDayShiftsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreateDayShifts_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDayShifts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemoveDayShifts" message="tns:ISDKService_RemoveDayShifts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemoveDayShiftsResponse" message="tns:ISDKService_RemoveDayShifts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemoveDayShiftsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemoveDayShifts_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDayShifts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetDayShifts" message="tns:ISDKService_GetDayShifts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetDayShiftsResponse" message="tns:ISDKService_GetDayShifts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetDayShiftsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetDayShifts_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackDayShifts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackDayShifts" message="tns:ISDKService_GetPackDayShifts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackDayShiftsResponse" message="tns:ISDKService_GetPackDayShifts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackDayShiftsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackDayShifts_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDayShifts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdateDayShifts" message="tns:ISDKService_UpdateDayShifts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdateDayShiftsResponse" message="tns:ISDKService_UpdateDayShifts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdateDayShiftsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdateDayShifts_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateShifts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreateShifts" message="tns:ISDKService_CreateShifts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreateShiftsResponse" message="tns:ISDKService_CreateShifts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreateShiftsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreateShifts_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveShifts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemoveShifts" message="tns:ISDKService_RemoveShifts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemoveShiftsResponse" message="tns:ISDKService_RemoveShifts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemoveShiftsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemoveShifts_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShifts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetShifts" message="tns:ISDKService_GetShifts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetShiftsResponse" message="tns:ISDKService_GetShifts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetShiftsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetShifts_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackShifts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackShifts" message="tns:ISDKService_GetPackShifts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackShiftsResponse" message="tns:ISDKService_GetPackShifts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackShiftsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackShifts_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShifts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdateShifts" message="tns:ISDKService_UpdateShifts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdateShiftsResponse" message="tns:ISDKService_UpdateShifts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdateShiftsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdateShifts_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnters">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetEnters" message="tns:ISDKService_GetEnters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetEntersResponse" message="tns:ISDKService_GetEnters_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetEntersServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetEnters_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackEnters">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackEnters" message="tns:ISDKService_GetPackEnters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackEntersResponse" message="tns:ISDKService_GetPackEnters_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackEntersServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackEnters_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExits">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetExits" message="tns:ISDKService_GetExits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetExitsResponse" message="tns:ISDKService_GetExits_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetExitsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetExits_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackExits">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackExits" message="tns:ISDKService_GetPackExits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackExitsResponse" message="tns:ISDKService_GetPackExits_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackExitsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackExits_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimexOperators">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetTimexOperators" message="tns:ISDKService_GetTimexOperators_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetTimexOperatorsResponse" message="tns:ISDKService_GetTimexOperators_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetTimexOperatorsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetTimexOperators_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackTimexOperators">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackTimexOperators" message="tns:ISDKService_GetPackTimexOperators_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackTimexOperatorsResponse" message="tns:ISDKService_GetPackTimexOperators_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackTimexOperatorsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackTimexOperators_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZones">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetTimeZones" message="tns:ISDKService_GetTimeZones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetTimeZonesResponse" message="tns:ISDKService_GetTimeZones_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetTimeZonesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetTimeZones_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackTimeZones">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackTimeZones" message="tns:ISDKService_GetPackTimeZones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackTimeZonesResponse" message="tns:ISDKService_GetPackTimeZones_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackTimeZonesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackTimeZones_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccessLevels">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreateAccessLevels" message="tns:ISDKService_CreateAccessLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreateAccessLevelsResponse" message="tns:ISDKService_CreateAccessLevels_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreateAccessLevelsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreateAccessLevels_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAccessLevels">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemoveAccessLevels" message="tns:ISDKService_RemoveAccessLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemoveAccessLevelsResponse" message="tns:ISDKService_RemoveAccessLevels_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemoveAccessLevelsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemoveAccessLevels_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessLevels">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetAccessLevels" message="tns:ISDKService_GetAccessLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetAccessLevelsResponse" message="tns:ISDKService_GetAccessLevels_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetAccessLevelsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetAccessLevels_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackAccessLevels">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackAccessLevels" message="tns:ISDKService_GetPackAccessLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackAccessLevelsResponse" message="tns:ISDKService_GetPackAccessLevels_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackAccessLevelsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackAccessLevels_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccessLevels">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdateAccessLevels" message="tns:ISDKService_UpdateAccessLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdateAccessLevelsResponse" message="tns:ISDKService_UpdateAccessLevels_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdateAccessLevelsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdateAccessLevels_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreateAreas" message="tns:ISDKService_CreateAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreateAreasResponse" message="tns:ISDKService_CreateAreas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreateAreasServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreateAreas_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemoveAreas" message="tns:ISDKService_RemoveAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemoveAreasResponse" message="tns:ISDKService_RemoveAreas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemoveAreasServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemoveAreas_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetAreas" message="tns:ISDKService_GetAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetAreasResponse" message="tns:ISDKService_GetAreas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetAreasServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetAreas_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackAreas" message="tns:ISDKService_GetPackAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackAreasResponse" message="tns:ISDKService_GetPackAreas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackAreasServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackAreas_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdateAreas" message="tns:ISDKService_UpdateAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdateAreasResponse" message="tns:ISDKService_UpdateAreas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdateAreasServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdateAreas_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkTimeInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetWorkTimeInfo" message="tns:ISDKService_GetWorkTimeInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetWorkTimeInfoResponse" message="tns:ISDKService_GetWorkTimeInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetWorkTimeInfoServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetWorkTimeInfo_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorktimeEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetWorktimeEvents" message="tns:ISDKService_GetWorktimeEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetWorktimeEventsResponse" message="tns:ISDKService_GetWorktimeEvents_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetWorktimeEventsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetWorktimeEvents_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateWorktimeEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreateWorktimeEvent" message="tns:ISDKService_CreateWorktimeEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreateWorktimeEventResponse" message="tns:ISDKService_CreateWorktimeEvent_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreateWorktimeEventServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreateWorktimeEvent_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveWorktimeEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemoveWorktimeEvent" message="tns:ISDKService_RemoveWorktimeEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemoveWorktimeEventResponse" message="tns:ISDKService_RemoveWorktimeEvent_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemoveWorktimeEventServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemoveWorktimeEvent_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdjustmentsByInterval">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetAdjustmentsByInterval" message="tns:ISDKService_GetAdjustmentsByInterval_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetAdjustmentsByIntervalResponse" message="tns:ISDKService_GetAdjustmentsByInterval_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetAdjustmentsByIntervalServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetAdjustmentsByInterval_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShiftByDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetShiftByDate" message="tns:ISDKService_GetShiftByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetShiftByDateResponse" message="tns:ISDKService_GetShiftByDate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetShiftByDateServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetShiftByDate_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetEventTypes" message="tns:ISDKService_GetEventTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetEventTypesResponse" message="tns:ISDKService_GetEventTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetEventTypesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetEventTypes_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AccessPointsOpen">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/AccessPointsOpen" message="tns:ISDKService_AccessPointsOpen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/AccessPointsOpenResponse" message="tns:ISDKService_AccessPointsOpen_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/AccessPointsOpenServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_AccessPointsOpen_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AccessPointsClose">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/AccessPointsClose" message="tns:ISDKService_AccessPointsClose_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/AccessPointsCloseResponse" message="tns:ISDKService_AccessPointsClose_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/AccessPointsCloseServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_AccessPointsClose_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AccessPointsUnblock">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/AccessPointsUnblock" message="tns:ISDKService_AccessPointsUnblock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/AccessPointsUnblockResponse" message="tns:ISDKService_AccessPointsUnblock_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/AccessPointsUnblockServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_AccessPointsUnblock_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeOnEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/SubscribeOnEvents" message="tns:ISDKService_SubscribeOnEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/SubscribeOnEventsResponse" message="tns:ISDKService_SubscribeOnEvents_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/SubscribeOnEventsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_SubscribeOnEvents_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnsubscribeFromEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UnsubscribeFromEvents" message="tns:ISDKService_UnsubscribeFromEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UnsubscribeFromEventsResponse" message="tns:ISDKService_UnsubscribeFromEvents_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UnsubscribeFromEventsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UnsubscribeFromEvents_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogonUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/LogonUser" message="tns:ISDKService_LogonUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/LogonUserResponse" message="tns:ISDKService_LogonUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/LogonUserServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_LogonUser_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/LogoutUser" message="tns:ISDKService_LogoutUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/LogoutUserResponse" message="tns:ISDKService_LogoutUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HeartBeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/HeartBeat" message="tns:ISDKService_HeartBeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/HeartBeatResponse" message="tns:ISDKService_HeartBeat_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/HeartBeatServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_HeartBeat_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdjustments">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetAdjustments" message="tns:ISDKService_GetAdjustments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetAdjustmentsResponse" message="tns:ISDKService_GetAdjustments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetAdjustmentsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetAdjustments_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackAdjustments">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackAdjustments" message="tns:ISDKService_GetPackAdjustments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackAdjustmentsResponse" message="tns:ISDKService_GetPackAdjustments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackAdjustmentsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackAdjustments_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDepartments">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreateDepartments" message="tns:ISDKService_CreateDepartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreateDepartmentsResponse" message="tns:ISDKService_CreateDepartments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreateDepartmentsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreateDepartments_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDepartments">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemoveDepartments" message="tns:ISDKService_RemoveDepartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemoveDepartmentsResponse" message="tns:ISDKService_RemoveDepartments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemoveDepartmentsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemoveDepartments_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartments">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetDepartments" message="tns:ISDKService_GetDepartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetDepartmentsResponse" message="tns:ISDKService_GetDepartments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetDepartmentsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetDepartments_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackDepartments">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackDepartments" message="tns:ISDKService_GetPackDepartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackDepartmentsResponse" message="tns:ISDKService_GetPackDepartments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackDepartmentsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackDepartments_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDepartments">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdateDepartments" message="tns:ISDKService_UpdateDepartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdateDepartmentsResponse" message="tns:ISDKService_UpdateDepartments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdateDepartmentsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdateDepartments_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCompanies">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreateCompanies" message="tns:ISDKService_CreateCompanies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreateCompaniesResponse" message="tns:ISDKService_CreateCompanies_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreateCompaniesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreateCompanies_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCompanies">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemoveCompanies" message="tns:ISDKService_RemoveCompanies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemoveCompaniesResponse" message="tns:ISDKService_RemoveCompanies_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemoveCompaniesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemoveCompanies_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanies">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetCompanies" message="tns:ISDKService_GetCompanies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetCompaniesResponse" message="tns:ISDKService_GetCompanies_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetCompaniesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetCompanies_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackCompanies">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackCompanies" message="tns:ISDKService_GetPackCompanies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackCompaniesResponse" message="tns:ISDKService_GetPackCompanies_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackCompaniesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackCompanies_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompanies">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdateCompanies" message="tns:ISDKService_UpdateCompanies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdateCompaniesResponse" message="tns:ISDKService_UpdateCompanies_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdateCompaniesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdateCompanies_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdditionalReaders">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetAdditionalReaders" message="tns:ISDKService_GetAdditionalReaders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetAdditionalReadersResponse" message="tns:ISDKService_GetAdditionalReaders_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetAdditionalReadersServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetAdditionalReaders_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackAdditionalReaders">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackAdditionalReaders" message="tns:ISDKService_GetPackAdditionalReaders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackAdditionalReadersResponse" message="tns:ISDKService_GetPackAdditionalReaders_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackAdditionalReadersServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackAdditionalReaders_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSchedulesWithStartDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreateSchedulesWithStartDate" message="tns:ISDKService_CreateSchedulesWithStartDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreateSchedulesWithStartDateResponse" message="tns:ISDKService_CreateSchedulesWithStartDate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreateSchedulesWithStartDateServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreateSchedulesWithStartDate_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSchedulesWithStartDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemoveSchedulesWithStartDate" message="tns:ISDKService_RemoveSchedulesWithStartDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemoveSchedulesWithStartDateResponse" message="tns:ISDKService_RemoveSchedulesWithStartDate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemoveSchedulesWithStartDateServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemoveSchedulesWithStartDate_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchedulesWithStartDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetSchedulesWithStartDate" message="tns:ISDKService_GetSchedulesWithStartDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetSchedulesWithStartDateResponse" message="tns:ISDKService_GetSchedulesWithStartDate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetSchedulesWithStartDateServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetSchedulesWithStartDate_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackSchedulesWithStartDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackSchedulesWithStartDate" message="tns:ISDKService_GetPackSchedulesWithStartDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackSchedulesWithStartDateResponse" message="tns:ISDKService_GetPackSchedulesWithStartDate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackSchedulesWithStartDateServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackSchedulesWithStartDate_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSchedulesWithStartDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdateSchedulesWithStartDate" message="tns:ISDKService_UpdateSchedulesWithStartDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdateSchedulesWithStartDateResponse" message="tns:ISDKService_UpdateSchedulesWithStartDate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdateSchedulesWithStartDateServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdateSchedulesWithStartDate_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDirectedAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreateDirectedAreas" message="tns:ISDKService_CreateDirectedAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreateDirectedAreasResponse" message="tns:ISDKService_CreateDirectedAreas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreateDirectedAreasServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreateDirectedAreas_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDirectedAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemoveDirectedAreas" message="tns:ISDKService_RemoveDirectedAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemoveDirectedAreasResponse" message="tns:ISDKService_RemoveDirectedAreas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemoveDirectedAreasServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemoveDirectedAreas_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectedAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetDirectedAreas" message="tns:ISDKService_GetDirectedAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetDirectedAreasResponse" message="tns:ISDKService_GetDirectedAreas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetDirectedAreasServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetDirectedAreas_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackDirectedAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackDirectedAreas" message="tns:ISDKService_GetPackDirectedAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackDirectedAreasResponse" message="tns:ISDKService_GetPackDirectedAreas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackDirectedAreasServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackDirectedAreas_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDirectedAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdateDirectedAreas" message="tns:ISDKService_UpdateDirectedAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdateDirectedAreasResponse" message="tns:ISDKService_UpdateDirectedAreas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdateDirectedAreasServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdateDirectedAreas_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkstations">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetWorkstations" message="tns:ISDKService_GetWorkstations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetWorkstationsResponse" message="tns:ISDKService_GetWorkstations_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetWorkstationsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetWorkstations_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackWorkstations">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackWorkstations" message="tns:ISDKService_GetPackWorkstations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackWorkstationsResponse" message="tns:ISDKService_GetPackWorkstations_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackWorkstationsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackWorkstations_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDevices">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetDevices" message="tns:ISDKService_GetDevices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetDevicesResponse" message="tns:ISDKService_GetDevices_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetDevicesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetDevices_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackDevices">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackDevices" message="tns:ISDKService_GetPackDevices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackDevicesResponse" message="tns:ISDKService_GetPackDevices_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackDevicesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackDevices_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogicalElements">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetLogicalElements" message="tns:ISDKService_GetLogicalElements_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetLogicalElementsResponse" message="tns:ISDKService_GetLogicalElements_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetLogicalElementsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetLogicalElements_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackLogicalElements">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackLogicalElements" message="tns:ISDKService_GetPackLogicalElements_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackLogicalElementsResponse" message="tns:ISDKService_GetPackLogicalElements_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackLogicalElementsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackLogicalElements_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogicalLinks">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetLogicalLinks" message="tns:ISDKService_GetLogicalLinks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetLogicalLinksResponse" message="tns:ISDKService_GetLogicalLinks_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetLogicalLinksServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetLogicalLinks_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackLogicalLinks">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackLogicalLinks" message="tns:ISDKService_GetPackLogicalLinks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackLogicalLinksResponse" message="tns:ISDKService_GetPackLogicalLinks_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackLogicalLinksServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackLogicalLinks_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetAccessPoints" message="tns:ISDKService_GetAccessPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetAccessPointsResponse" message="tns:ISDKService_GetAccessPoints_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetAccessPointsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetAccessPoints_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackAccessPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackAccessPoints" message="tns:ISDKService_GetPackAccessPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackAccessPointsResponse" message="tns:ISDKService_GetPackAccessPoints_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackAccessPointsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackAccessPoints_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRegistrationPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreateRegistrationPoints" message="tns:ISDKService_CreateRegistrationPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreateRegistrationPointsResponse" message="tns:ISDKService_CreateRegistrationPoints_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreateRegistrationPointsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreateRegistrationPoints_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRegistrationPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemoveRegistrationPoints" message="tns:ISDKService_RemoveRegistrationPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemoveRegistrationPointsResponse" message="tns:ISDKService_RemoveRegistrationPoints_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemoveRegistrationPointsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemoveRegistrationPoints_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrationPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetRegistrationPoints" message="tns:ISDKService_GetRegistrationPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetRegistrationPointsResponse" message="tns:ISDKService_GetRegistrationPoints_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetRegistrationPointsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetRegistrationPoints_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackRegistrationPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackRegistrationPoints" message="tns:ISDKService_GetPackRegistrationPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackRegistrationPointsResponse" message="tns:ISDKService_GetPackRegistrationPoints_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackRegistrationPointsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackRegistrationPoints_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRegistrationPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdateRegistrationPoints" message="tns:ISDKService_UpdateRegistrationPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdateRegistrationPointsResponse" message="tns:ISDKService_UpdateRegistrationPoints_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdateRegistrationPointsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdateRegistrationPoints_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmployees">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreateEmployees" message="tns:ISDKService_CreateEmployees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreateEmployeesResponse" message="tns:ISDKService_CreateEmployees_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreateEmployeesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreateEmployees_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployees">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemoveEmployees" message="tns:ISDKService_RemoveEmployees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemoveEmployeesResponse" message="tns:ISDKService_RemoveEmployees_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemoveEmployeesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemoveEmployees_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetEmployees" message="tns:ISDKService_GetEmployees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetEmployeesResponse" message="tns:ISDKService_GetEmployees_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetEmployeesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetEmployees_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackEmployees">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackEmployees" message="tns:ISDKService_GetPackEmployees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackEmployeesResponse" message="tns:ISDKService_GetPackEmployees_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackEmployeesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackEmployees_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployees">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdateEmployees" message="tns:ISDKService_UpdateEmployees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdateEmployeesResponse" message="tns:ISDKService_UpdateEmployees_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdateEmployeesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdateEmployees_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailInfoEmployees">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetDetailInfoEmployees" message="tns:ISDKService_GetDetailInfoEmployees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetDetailInfoEmployeesResponse" message="tns:ISDKService_GetDetailInfoEmployees_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetDetailInfoEmployeesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetDetailInfoEmployees_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDetailInfoEmployees">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdateDetailInfoEmployees" message="tns:ISDKService_UpdateDetailInfoEmployees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdateDetailInfoEmployeesResponse" message="tns:ISDKService_UpdateDetailInfoEmployees_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdateDetailInfoEmployeesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdateDetailInfoEmployees_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSchedules">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreateSchedules" message="tns:ISDKService_CreateSchedules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreateSchedulesResponse" message="tns:ISDKService_CreateSchedules_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreateSchedulesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreateSchedules_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSchedules">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemoveSchedules" message="tns:ISDKService_RemoveSchedules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemoveSchedulesResponse" message="tns:ISDKService_RemoveSchedules_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemoveSchedulesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemoveSchedules_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchedules">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetSchedules" message="tns:ISDKService_GetSchedules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetSchedulesResponse" message="tns:ISDKService_GetSchedules_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetSchedulesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetSchedules_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackSchedules">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackSchedules" message="tns:ISDKService_GetPackSchedules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackSchedulesResponse" message="tns:ISDKService_GetPackSchedules_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackSchedulesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackSchedules_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSchedules">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdateSchedules" message="tns:ISDKService_UpdateSchedules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdateSchedulesResponse" message="tns:ISDKService_UpdateSchedules_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdateSchedulesServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdateSchedules_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateShiftIntervals">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreateShiftIntervals" message="tns:ISDKService_CreateShiftIntervals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreateShiftIntervalsResponse" message="tns:ISDKService_CreateShiftIntervals_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreateShiftIntervalsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreateShiftIntervals_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveShiftIntervals">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemoveShiftIntervals" message="tns:ISDKService_RemoveShiftIntervals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemoveShiftIntervalsResponse" message="tns:ISDKService_RemoveShiftIntervals_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemoveShiftIntervalsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemoveShiftIntervals_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShiftIntervals">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetShiftIntervals" message="tns:ISDKService_GetShiftIntervals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetShiftIntervalsResponse" message="tns:ISDKService_GetShiftIntervals_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetShiftIntervalsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetShiftIntervals_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackShiftIntervals">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackShiftIntervals" message="tns:ISDKService_GetPackShiftIntervals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackShiftIntervalsResponse" message="tns:ISDKService_GetPackShiftIntervals_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackShiftIntervalsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackShiftIntervals_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShiftIntervals">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdateShiftIntervals" message="tns:ISDKService_UpdateShiftIntervals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdateShiftIntervalsResponse" message="tns:ISDKService_UpdateShiftIntervals_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdateShiftIntervalsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdateShiftIntervals_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePosts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreatePosts" message="tns:ISDKService_CreatePosts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreatePostsResponse" message="tns:ISDKService_CreatePosts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreatePostsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreatePosts_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePosts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemovePosts" message="tns:ISDKService_RemovePosts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemovePostsResponse" message="tns:ISDKService_RemovePosts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemovePostsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemovePosts_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPosts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPosts" message="tns:ISDKService_GetPosts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPostsResponse" message="tns:ISDKService_GetPosts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPostsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPosts_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackPosts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetPackPosts" message="tns:ISDKService_GetPackPosts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetPackPostsResponse" message="tns:ISDKService_GetPackPosts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetPackPostsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetPackPosts_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePosts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/UpdatePosts" message="tns:ISDKService_UpdatePosts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/UpdatePostsResponse" message="tns:ISDKService_UpdatePosts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/UpdatePostsServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_UpdatePosts_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateWorkingAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/CreateWorkingAreas" message="tns:ISDKService_CreateWorkingAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/CreateWorkingAreasResponse" message="tns:ISDKService_CreateWorkingAreas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/CreateWorkingAreasServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_CreateWorkingAreas_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveWorkingAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/RemoveWorkingAreas" message="tns:ISDKService_RemoveWorkingAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/RemoveWorkingAreasResponse" message="tns:ISDKService_RemoveWorkingAreas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/RemoveWorkingAreasServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_RemoveWorkingAreas_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkingAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISDKService/GetWorkingAreas" message="tns:ISDKService_GetWorkingAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISDKService/GetWorkingAreasResponse" message="tns:ISDKService_GetWorkingAreas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISDKService/GetWorkingAreasServiceFautFault" name="ServiceFautFault" message="tns:ISDKService_GetWorkingAreas_ServiceFautFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Base" type="tns:ISDKService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPackWorkingAreas">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackWorkingAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkingAreas">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdateWorkingAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRules">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreateRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRules">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemoveRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRules">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackRules">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRules">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdateRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDayShifts">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreateDayShifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDayShifts">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemoveDayShifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayShifts">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetDayShifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackDayShifts">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackDayShifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDayShifts">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdateDayShifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateShifts">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreateShifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveShifts">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemoveShifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetShifts">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetShifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackShifts">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackShifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShifts">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdateShifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnters">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetEnters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackEnters">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackEnters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetExits">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetExits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackExits">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackExits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimexOperators">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetTimexOperators" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackTimexOperators">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackTimexOperators" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZones">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetTimeZones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackTimeZones">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackTimeZones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccessLevels">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreateAccessLevels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAccessLevels">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemoveAccessLevels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessLevels">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetAccessLevels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackAccessLevels">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackAccessLevels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccessLevels">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdateAccessLevels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAreas">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreateAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAreas">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemoveAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAreas">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackAreas">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAreas">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdateAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkTimeInfo">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetWorkTimeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorktimeEvents">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetWorktimeEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateWorktimeEvent">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreateWorktimeEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveWorktimeEvent">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemoveWorktimeEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdjustmentsByInterval">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetAdjustmentsByInterval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetShiftByDate">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetShiftByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventTypes">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetEventTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AccessPointsOpen">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/AccessPointsOpen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AccessPointsClose">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/AccessPointsClose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AccessPointsUnblock">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/AccessPointsUnblock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeOnEvents">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/SubscribeOnEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UnsubscribeFromEvents">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UnsubscribeFromEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LogonUser">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/LogonUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUser">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/LogoutUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HeartBeat">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/HeartBeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdjustments">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetAdjustments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackAdjustments">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackAdjustments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDepartments">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreateDepartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDepartments">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemoveDepartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartments">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetDepartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackDepartments">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackDepartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDepartments">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdateDepartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCompanies">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreateCompanies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCompanies">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemoveCompanies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanies">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetCompanies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackCompanies">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackCompanies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompanies">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdateCompanies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdditionalReaders">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetAdditionalReaders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackAdditionalReaders">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackAdditionalReaders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSchedulesWithStartDate">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreateSchedulesWithStartDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSchedulesWithStartDate">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemoveSchedulesWithStartDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchedulesWithStartDate">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetSchedulesWithStartDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackSchedulesWithStartDate">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackSchedulesWithStartDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSchedulesWithStartDate">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdateSchedulesWithStartDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDirectedAreas">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreateDirectedAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDirectedAreas">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemoveDirectedAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectedAreas">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetDirectedAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackDirectedAreas">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackDirectedAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDirectedAreas">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdateDirectedAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkstations">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetWorkstations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackWorkstations">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackWorkstations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDevices">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetDevices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackDevices">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackDevices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogicalElements">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetLogicalElements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackLogicalElements">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackLogicalElements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogicalLinks">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetLogicalLinks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackLogicalLinks">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackLogicalLinks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessPoints">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetAccessPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackAccessPoints">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackAccessPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRegistrationPoints">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreateRegistrationPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRegistrationPoints">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemoveRegistrationPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrationPoints">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetRegistrationPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackRegistrationPoints">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackRegistrationPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRegistrationPoints">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdateRegistrationPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmployees">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreateEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployees">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemoveEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackEmployees">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployees">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdateEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailInfoEmployees">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetDetailInfoEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDetailInfoEmployees">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdateDetailInfoEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSchedules">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreateSchedules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSchedules">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemoveSchedules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchedules">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetSchedules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackSchedules">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackSchedules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSchedules">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdateSchedules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateShiftIntervals">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreateShiftIntervals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveShiftIntervals">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemoveShiftIntervals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetShiftIntervals">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetShiftIntervals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackShiftIntervals">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackShiftIntervals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShiftIntervals">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdateShiftIntervals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePosts">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreatePosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePosts">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemovePosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosts">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackPosts">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetPackPosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePosts">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/UpdatePosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateWorkingAreas">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/CreateWorkingAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveWorkingAreas">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/RemoveWorkingAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkingAreas">
+      <soap:operation soapAction="http://tempuri.org/ISDKService/GetWorkingAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFautFault">
+        <soap:fault use="literal" name="ServiceFautFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ISDKServiceImpl">
+    <wsdl:port name="Base" binding="tns:Base">
+      <soap:address location="http://localhost:59361/Timex/TimexSDKService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

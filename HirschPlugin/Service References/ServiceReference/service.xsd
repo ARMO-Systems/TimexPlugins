@@ -1,0 +1,1678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetPackWorkingAreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackWorkingAreasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackWorkingAreasResult" nillable="true" type="q1:ArrayOfWorkingArea" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWorkingAreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="WorkingArea" nillable="true" type="q2:ArrayOfWorkingArea" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWorkingAreasResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="CreateRulesResult" nillable="true" type="q3:ArrayOfRule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveRules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveRulesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q5:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetRulesResult" nillable="true" type="q6:ArrayOfRule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackRules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackRulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackRulesResult" nillable="true" type="q7:ArrayOfRule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="Rule" nillable="true" type="q8:ArrayOfRule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRulesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDayShifts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDayShiftsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="CreateDayShiftsResult" nillable="true" type="q9:ArrayOfDayShift" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveDayShifts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q10:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveDayShiftsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDayShifts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q11:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDayShiftsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetDayShiftsResult" nillable="true" type="q12:ArrayOfDayShift" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackDayShifts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackDayShiftsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackDayShiftsResult" nillable="true" type="q13:ArrayOfDayShift" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDayShifts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="DayShift" nillable="true" type="q14:ArrayOfDayShift" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDayShiftsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateShifts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateShiftsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="CreateShiftsResult" nillable="true" type="q15:ArrayOfShift" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveShifts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q16:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveShiftsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShifts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q17:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShiftsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetShiftsResult" nillable="true" type="q18:ArrayOfShift" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackShifts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackShiftsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackShiftsResult" nillable="true" type="q19:ArrayOfShift" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShifts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="Shift" nillable="true" type="q20:ArrayOfShift" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShiftsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEnters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q21:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetEntersResult" nillable="true" type="q22:ArrayOfEnter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackEnters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackEntersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackEntersResult" nillable="true" type="q23:ArrayOfEnter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q24:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExitsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetExitsResult" nillable="true" type="q25:ArrayOfExit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackExits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackExitsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackExitsResult" nillable="true" type="q26:ArrayOfExit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTimexOperators">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q27:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTimexOperatorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetTimexOperatorsResult" nillable="true" type="q28:ArrayOfTimexOperator" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackTimexOperators">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackTimexOperatorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackTimexOperatorsResult" nillable="true" type="q29:ArrayOfTimexOperator" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTimeZones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q30:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTimeZonesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetTimeZonesResult" nillable="true" type="q31:ArrayOfTimeZone" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackTimeZones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackTimeZonesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackTimeZonesResult" nillable="true" type="q32:ArrayOfTimeZone" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAccessLevels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAccessLevelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="CreateAccessLevelsResult" nillable="true" type="q33:ArrayOfAccessLevel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveAccessLevels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q34:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveAccessLevelsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccessLevels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q35:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccessLevelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetAccessLevelsResult" nillable="true" type="q36:ArrayOfAccessLevel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackAccessLevels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackAccessLevelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackAccessLevelsResult" nillable="true" type="q37:ArrayOfAccessLevel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAccessLevels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="AccessLevel" nillable="true" type="q38:ArrayOfAccessLevel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAccessLevelsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAreasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="CreateAreasResult" nillable="true" type="q39:ArrayOfArea" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveAreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q40:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveAreasResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q41:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAreasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetAreasResult" nillable="true" type="q42:ArrayOfArea" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackAreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackAreasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackAreasResult" nillable="true" type="q43:ArrayOfArea" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="Area" nillable="true" type="q44:ArrayOfArea" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAreasResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkTimeInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="employeeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="ruleId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isCalculateBySchedule" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkTimeInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetWorkTimeInfoResult" nillable="true" type="q45:ArrayOfWorktimeInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorktimeEvents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fromUTC" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="toUTC" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="timeZoneId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="employeeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maxCount" type="xs:int" />
+        <xs:element minOccurs="0" name="recent" type="xs:boolean" />
+        <xs:element minOccurs="0" name="appName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorktimeEventsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetWorktimeEventsResult" nillable="true" type="q46:ArrayOfWorktimeEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorktimeEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="appName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="employeeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="registrationPointId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="timeUTC" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="timeZoneId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorktimeEventResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateWorktimeEventResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveWorktimeEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="worktimeEventId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveWorktimeEventResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAdjustmentsByInterval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="employeeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="beginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAdjustmentsByIntervalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetAdjustmentsByIntervalResult" nillable="true" type="q47:ArrayOfAdjustment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShiftByDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="employeeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShiftByDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetShiftByDateResult" nillable="true" type="q48:Shift" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEventTypesResult" nillable="true" type="q49:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccessPointsOpen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q50="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="accessPointIds" nillable="true" type="q50:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccessPointsOpenResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccessPointsClose">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="accessPointIds" nillable="true" type="q51:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccessPointsCloseResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccessPointsUnblock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q52="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="accessPointIds" nillable="true" type="q52:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccessPointsUnblockResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscribeOnEvents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q53="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="eventType" nillable="true" type="q53:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscribeOnEventsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnsubscribeFromEvents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q54="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="eventType" nillable="true" type="q54:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnsubscribeFromEventsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogonUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogonUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LogonUserResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HeartBeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HeartBeatResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAdjustments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q55="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q55:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAdjustmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetAdjustmentsResult" nillable="true" type="q56:ArrayOfAdjustment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackAdjustments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackAdjustmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackAdjustmentsResult" nillable="true" type="q57:ArrayOfAdjustment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDepartments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDepartmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="CreateDepartmentsResult" nillable="true" type="q58:ArrayOfDepartment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveDepartments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q59="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q59:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveDepartmentsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDepartments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q60="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q60:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDepartmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetDepartmentsResult" nillable="true" type="q61:ArrayOfDepartment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackDepartments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackDepartmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackDepartmentsResult" nillable="true" type="q62:ArrayOfDepartment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDepartments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="Department" nillable="true" type="q63:ArrayOfDepartment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDepartmentsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCompanies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCompaniesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="CreateCompaniesResult" nillable="true" type="q64:ArrayOfCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCompanies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q65="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q65:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCompaniesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q66="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q66:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompaniesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetCompaniesResult" nillable="true" type="q67:ArrayOfCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackCompanies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackCompaniesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackCompaniesResult" nillable="true" type="q68:ArrayOfCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCompanies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="Company" nillable="true" type="q69:ArrayOfCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCompaniesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAdditionalReaders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q70="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q70:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAdditionalReadersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetAdditionalReadersResult" nillable="true" type="q71:ArrayOfAdditionalReader" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackAdditionalReaders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackAdditionalReadersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackAdditionalReadersResult" nillable="true" type="q72:ArrayOfAdditionalReader" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSchedulesWithStartDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSchedulesWithStartDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="CreateSchedulesWithStartDateResult" nillable="true" type="q73:ArrayOfScheduleWithStartDate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSchedulesWithStartDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q74="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q74:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSchedulesWithStartDateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSchedulesWithStartDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q75:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSchedulesWithStartDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetSchedulesWithStartDateResult" nillable="true" type="q76:ArrayOfScheduleWithStartDate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackSchedulesWithStartDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackSchedulesWithStartDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackSchedulesWithStartDateResult" nillable="true" type="q77:ArrayOfScheduleWithStartDate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSchedulesWithStartDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="ScheduleWithStartDate" nillable="true" type="q78:ArrayOfScheduleWithStartDate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSchedulesWithStartDateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDirectedAreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDirectedAreasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="CreateDirectedAreasResult" nillable="true" type="q79:ArrayOfDirectedArea" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveDirectedAreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q80="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q80:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveDirectedAreasResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDirectedAreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q81="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q81:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDirectedAreasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetDirectedAreasResult" nillable="true" type="q82:ArrayOfDirectedArea" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackDirectedAreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackDirectedAreasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackDirectedAreasResult" nillable="true" type="q83:ArrayOfDirectedArea" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDirectedAreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="DirectedArea" nillable="true" type="q84:ArrayOfDirectedArea" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDirectedAreasResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkstations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q85="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q85:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkstationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetWorkstationsResult" nillable="true" type="q86:ArrayOfWorkstation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackWorkstations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackWorkstationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackWorkstationsResult" nillable="true" type="q87:ArrayOfWorkstation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDevices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q88="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q88:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDevicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetDevicesResult" nillable="true" type="q89:ArrayOfDevice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackDevices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackDevicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackDevicesResult" nillable="true" type="q90:ArrayOfDevice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLogicalElements">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q91="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q91:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLogicalElementsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetLogicalElementsResult" nillable="true" type="q92:ArrayOfLogicalElement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackLogicalElements">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackLogicalElementsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackLogicalElementsResult" nillable="true" type="q93:ArrayOfLogicalElement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLogicalLinks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q94="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q94:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLogicalLinksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetLogicalLinksResult" nillable="true" type="q95:ArrayOfLogicalLink" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackLogicalLinks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackLogicalLinksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackLogicalLinksResult" nillable="true" type="q96:ArrayOfLogicalLink" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccessPoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q97="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q97:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccessPointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetAccessPointsResult" nillable="true" type="q98:ArrayOfAccessPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackAccessPoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackAccessPointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackAccessPointsResult" nillable="true" type="q99:ArrayOfAccessPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRegistrationPoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRegistrationPointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="CreateRegistrationPointsResult" nillable="true" type="q100:ArrayOfRegistrationPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveRegistrationPoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q101="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q101:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveRegistrationPointsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegistrationPoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q102="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q102:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegistrationPointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetRegistrationPointsResult" nillable="true" type="q103:ArrayOfRegistrationPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackRegistrationPoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackRegistrationPointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackRegistrationPointsResult" nillable="true" type="q104:ArrayOfRegistrationPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRegistrationPoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="RegistrationPoint" nillable="true" type="q105:ArrayOfRegistrationPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRegistrationPointsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateEmployees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateEmployeesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="CreateEmployeesResult" nillable="true" type="q106:ArrayOfEmployee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEmployees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q107="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q107:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEmployeesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmployees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q108="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q108:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmployeesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetEmployeesResult" nillable="true" type="q109:ArrayOfEmployee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackEmployees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackEmployeesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackEmployeesResult" nillable="true" type="q110:ArrayOfEmployee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEmployees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="Employee" nillable="true" type="q111:ArrayOfEmployee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEmployeesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDetailInfoEmployees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q112="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q112:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDetailInfoEmployeesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetDetailInfoEmployeesResult" nillable="true" type="q113:ArrayOfEmployeeDetailInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDetailInfoEmployees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="Employee" nillable="true" type="q114:ArrayOfEmployeeDetailInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDetailInfoEmployeesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSchedules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSchedulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="CreateSchedulesResult" nillable="true" type="q115:ArrayOfSchedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSchedules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q116="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q116:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSchedulesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSchedules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q117="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q117:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSchedulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetSchedulesResult" nillable="true" type="q118:ArrayOfSchedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackSchedules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackSchedulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackSchedulesResult" nillable="true" type="q119:ArrayOfSchedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSchedules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="Schedule" nillable="true" type="q120:ArrayOfSchedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSchedulesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateShiftIntervals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateShiftIntervalsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="CreateShiftIntervalsResult" nillable="true" type="q121:ArrayOfShiftInterval" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveShiftIntervals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q122="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q122:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveShiftIntervalsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShiftIntervals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q123="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q123:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShiftIntervalsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetShiftIntervalsResult" nillable="true" type="q124:ArrayOfShiftInterval" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackShiftIntervals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackShiftIntervalsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackShiftIntervalsResult" nillable="true" type="q125:ArrayOfShiftInterval" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShiftIntervals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="ShiftInterval" nillable="true" type="q126:ArrayOfShiftInterval" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShiftIntervalsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePosts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePostsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="CreatePostsResult" nillable="true" type="q127:ArrayOfPost" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePosts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q128="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q128:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePostsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPosts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q129="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q129:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPostsResult" nillable="true" type="q130:ArrayOfPost" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackPosts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="topReturnedObjects" type="xs:int" />
+        <xs:element minOccurs="0" name="skipReturnedObjects" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPackPostsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetPackPostsResult" nillable="true" type="q131:ArrayOfPost" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePosts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="Post" nillable="true" type="q132:ArrayOfPost" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePostsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkingAreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkingAreasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="CreateWorkingAreasResult" nillable="true" type="q133:ArrayOfWorkingArea" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveWorkingAreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q134="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q134:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveWorkingAreasResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkingAreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="session" nillable="true" type="xs:string" />
+        <xs:element xmlns:q135="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q135:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkingAreasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.SDKService.SDKClasses" minOccurs="0" name="GetWorkingAreasResult" nillable="true" type="q136:ArrayOfWorkingArea" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

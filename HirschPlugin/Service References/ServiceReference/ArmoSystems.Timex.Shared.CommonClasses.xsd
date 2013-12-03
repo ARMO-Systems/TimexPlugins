@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.CommonClasses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ArmoSystems.Timex.Shared.CommonClasses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="Period">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Day">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Week">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Month">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Period" nillable="true" type="tns:Period" />
+  <xs:simpleType name="ShiftType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Fixed" />
+      <xs:enumeration value="Free" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ShiftType" nillable="true" type="tns:ShiftType" />
+  <xs:simpleType name="DeviceConnectionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ethernet" />
+      <xs:enumeration value="Rs232Rs485" />
+      <xs:enumeration value="RemoteByUSB" />
+      <xs:enumeration value="Offline" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DeviceConnectionType" nillable="true" type="tns:DeviceConnectionType" />
+</xs:schema>
