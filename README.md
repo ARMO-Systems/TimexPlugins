@@ -6,7 +6,7 @@ TimexPlugins
 - Интеграция системы Hirsch с Timex версии 3.9.1
 
 
-Оригинальный репозиторий находится по адресу [https://github.com/Podlesnyy/TimexPlugins](https://github.com/Podlesnyy/TimexPlugins)
+Оригинальный репозиторий находится по адресу [https://github.com/ARMO-Systems/TimexPlugins](https://github.com/ARMO-Systems/TimexPlugins)
 
 Код, описание и все файлы из данного репозитория распространяются под лицензией [MIT](http://opensource.org/licenses/MIT).
 
